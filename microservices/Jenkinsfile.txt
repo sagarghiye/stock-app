@@ -3,7 +3,7 @@ agent any
 stages {
 stage('Clean stage') {
 steps {
-dir("ChatApp") {
+dir("microservices") {
 withMaven(maven: 'maven_3_6_1') {
 bat 'mvn clean'
 }
@@ -12,7 +12,7 @@ bat 'mvn clean'
 }
 stage('Compile stage') {
 steps {
-dir("ChatApp") {
+dir("microservices") {
 withMaven(maven: 'maven_3_6_1') {
 bat 'mvn compile'
 }
@@ -21,7 +21,7 @@ bat 'mvn compile'
 }
 stage('Install stage') {
 steps {
-dir("ChatApp") {
+dir("microservices") {
 withMaven(maven: 'maven_3_6_1') {
 bat 'mvn install'
 }
